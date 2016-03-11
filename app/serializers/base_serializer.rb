@@ -17,4 +17,7 @@ class BaseSerializer
     JSONAPI::Serializer.serialize(models, options)
   end
 
+  def json_error(status)
+    JSONAPI::Serializer.serialize(AppException.new(status), is_collection: false)
+  end
 end

@@ -1,7 +1,11 @@
 class ContentsController < ApplicationController
 
   def index
-    render json: JSONAPI::Serializer.serialize(Content.all, is_collection: true)
+    content = Content.new
+    content.save
+    render json: ErrorSerializer.serialize_json(content.errors), status: 422
+    # render json: json_error(422)
+    # render json: json_collection(Content.all)
   end
 
   def select
@@ -9,11 +13,15 @@ class ContentsController < ApplicationController
   end
 
   def show
-    render json: JSONAPI::Serializer.serialize(Content.find(params[:id]), is_collection: false)
+    render json: json_object(Content.find(params[:id]))
   end
 
   def delete
     render json: {}
+  end
+
+  def create
+    render json: content.save ? json_object(content) : json_error(422)
   end
 
   private
