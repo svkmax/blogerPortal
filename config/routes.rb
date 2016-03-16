@@ -57,6 +57,7 @@ Rails.application.routes.draw do
 
   resources :videos
   resources :contents
+  resources :users
   # get 'videos' => 'application#videos'
   # get 'videos/1' => 'application#videos'
   root 'videos#index'

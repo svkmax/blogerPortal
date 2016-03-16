@@ -1,11 +1,7 @@
 class ContentsController < ApplicationController
 
   def index
-    content = Content.new
-    content.save
-    render json: ErrorSerializer.serialize_json(content.errors), status: 422
-    # render json: json_error(422)
-    # render json: json_collection(Content.all)
+    render json: json_collection(Content.all)
   end
 
   def select
@@ -21,7 +17,8 @@ class ContentsController < ApplicationController
   end
 
   def create
-    render json: content.save ? json_object(content) : json_error(422)
+    content = Content.new(content_params)
+    render json: content.save ? json_object(content) : ErrorSerializer.serialize_json(content.errors)
   end
 
   private

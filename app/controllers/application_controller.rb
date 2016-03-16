@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def json_collection collection
+    puts collection
     JSONAPI::Serializer.serialize(collection, is_collection: true)
   end
 

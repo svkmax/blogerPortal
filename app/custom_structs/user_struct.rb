@@ -1,0 +1,3 @@
+class UserStruct < OpenStruct
+
+end
