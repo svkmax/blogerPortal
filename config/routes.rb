@@ -55,8 +55,10 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :videos
   resources :contents
+  namespace :contents do
+    resources :posts, only: [:index, :create]
+  end
   resources :users
   # get 'videos' => 'application#videos'
   # get 'videos/1' => 'application#videos'

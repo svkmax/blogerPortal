@@ -7,7 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)Content.all
 
 
-# Video.create([
-#                  {title: "25 лет аномии", author_name: "K.O.", description: "Аномия общества - это промежуточное состояние между двумя состояниями, когда старые ценности уже не работают, а новые еще не работают"},
-#                  {title: "", author_name: "", description: ""}])
 

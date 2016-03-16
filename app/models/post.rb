@@ -8,4 +8,5 @@ class Post
   field :text, type: Text
 
 
+
 end
