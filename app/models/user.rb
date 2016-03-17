@@ -4,6 +4,9 @@ class User
   include NoBrainer::Document::Timestamps
 
   field :contents, type: Array
+  field :full_name, type: String
+  field :about, type: Text
+  field :avatar_src, type: String
 
   def with_contents
     User.new NoBrainer.run { |r| r.table('users').get(id).merge {

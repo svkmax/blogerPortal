@@ -19,3 +19,5 @@
 !.keep
 
 /.idea
+/rethinkdb_data
+/rvm_proj.sh

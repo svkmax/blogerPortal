@@ -62,7 +62,7 @@ Rails.application.routes.draw do
   resources :users
   # get 'videos' => 'application#videos'
   # get 'videos/1' => 'application#videos'
-  root 'videos#index'
+  root 'users#index'
   # jsonapi_resources :contents do
   #     get 'select', on: :collection
   # end

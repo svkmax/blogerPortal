@@ -20,12 +20,10 @@ class ApplicationController < ActionController::Base
   end
 
   def json_collection collection
-    puts collection
     JSONAPI::Serializer.serialize(collection, is_collection: true)
   end
 
   def json_error(status)
-    Video.class.name
     JSONAPI::Serializer.serialize(AppException.new(status), is_collection: false)
   end
 

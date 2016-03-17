@@ -53,6 +53,7 @@ group :development do
   # gem 'spring'
   gem 'thin', '~> 1.6', '>= 1.6.4'
   gem 'pry-rails'
+  gem 'faker'
 end
 
 
