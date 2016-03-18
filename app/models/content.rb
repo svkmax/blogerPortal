@@ -18,14 +18,18 @@ class Content
     content = super obj_hash
     user = User.find(content.user_id)
     user.update(contents: user.contents + [content.id]) if content.valid?
+    content
   end
 
   def save
-    Content.create(self.as_json)
+    if super
+      user.update(contents: user.contents + [id])
+    end
   end
 
+  # TODO
   def delete
-
+  #     to be developed
   end
 
 
